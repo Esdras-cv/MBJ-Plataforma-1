@@ -1,0 +1,523 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://Scripts/Fase3.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Cenário/Background.png" type="Texture" id=2]
+[ext_resource path="res://Scene/TileMap.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scripts/FinishArea3.gd" type="Script" id=4]
+[ext_resource path="res://Sprites/Itens/Object_4.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Cenário/Object_21.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Cenário/Object_12.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Cenário/Object_1.png" type="Texture" id=8]
+[ext_resource path="res://Scene/Player.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Sprites/Player/adventurer_stand.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Itens/gemYellow.png" type="Texture" id=11]
+[ext_resource path="res://GoldUnderTheMud-Regular.ttf" type="DynamicFontData" id=12]
+[ext_resource path="res://Scene/Spikes.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scene/DiamanteArea.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scripts/AreaDeMorte3.gd" type="Script" id=15]
+[ext_resource path="res://Sprites/Cenário/Object_6.png" type="Texture" id=16]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 87.5383, 82.8824 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+font_data = ExtResource( 12 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 30
+font_data = ExtResource( 12 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 1520.1, 10 )
+
+[node name="World3" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 145.622, 345.847 )
+texture = ExtResource( 2 )
+offset = Vector2( -249.08, 236.049 )
+
+[node name="TileMap" parent="." instance=ExtResource( 3 )]
+position = Vector2( 0.0708771, -0.192276 )
+tile_data = PoolIntArray( 65529, 0, 0, 65530, 2, 0, 196598, 0, 0, 196599, 2, 0, 196604, 4, 0, 196607, 4, 0, 262140, 4, 0, 262143, 4, 0, 327672, 0, 0, 327673, 2, 0, 327676, 4, 0, 327679, 4, 0, 393212, 4, 0, 393215, 4, 0, 327680, 0, 0, 327681, 1, 0, 327682, 2, 0, 458741, 0, 0, 458742, 2, 0, 458748, 4, 0, 458749, 1, 0, 458750, 1, 0, 458751, 4, 0, 524284, 5, 0, 524287, 5, 0, 458755, 0, 0, 458756, 2, 0, 589816, 0, 0, 589817, 2, 0, 589825, 0, 0, 589826, 2, 0, 720891, 0, 0, 720892, 2, 0, 786430, 0, 0, 786431, 2, 0 )
+
+[node name="Finish" type="Area2D" parent="."]
+editor/display_folded = true
+position = Vector2( -170.628, 494.956 )
+scale = Vector2( 0.600002, 0.68 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+nextLevel = "res://Scene/Créditos.tscn"
+
+[node name="Sprite" type="Sprite" parent="Finish"]
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Finish"]
+position = Vector2( 0, 45.5414 )
+shape = SubResource( 1 )
+
+[node name="Object_21" type="Sprite" parent="."]
+position = Vector2( 151.965, 230.365 )
+texture = ExtResource( 6 )
+
+[node name="MoitasGrandes" type="Node2D" parent="."]
+editor/display_folded = true
+
+[node name="Object_21" type="Sprite" parent="MoitasGrandes"]
+position = Vector2( 202.967, 806.625 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 7 )
+
+[node name="Object_31" type="Sprite" parent="MoitasGrandes"]
+position = Vector2( -373.316, 903.645 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 7 )
+
+[node name="Object_32" type="Sprite" parent="MoitasGrandes"]
+position = Vector2( -660.684, 326.672 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 7 )
+
+[node name="Girassois" type="Node2D" parent="."]
+editor/display_folded = true
+
+[node name="Object_1" type="Sprite" parent="Girassois"]
+position = Vector2( 210.456, 422.619 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 8 )
+
+[node name="Object_2" type="Sprite" parent="Girassois"]
+position = Vector2( 57.528, 422.222 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 8 )
+
+[node name="Object_3" type="Sprite" parent="Girassois"]
+position = Vector2( 424.316, 614.672 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 8 )
+
+[node name="Object_4" type="Sprite" parent="Girassois"]
+position = Vector2( -49.2723, 1000.02 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 8 )
+
+[node name="Object_5" type="Sprite" parent="Girassois"]
+position = Vector2( -153.016, 999.741 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 8 )
+
+[node name="Object_6" type="Sprite" parent="Girassois"]
+position = Vector2( -625.939, 711.62 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 8 )
+
+[node name="Object_7" type="Sprite" parent="Girassois"]
+position = Vector2( -1021.65, 519.52 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 8 )
+
+[node name="Object_8" type="Sprite" parent="Girassois"]
+position = Vector2( -907.259, 518.297 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 8 )
+
+[node name="Object_9" type="Sprite" parent="Girassois"]
+position = Vector2( -944.166, 521.151 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 8 )
+
+[node name="Object_10" type="Sprite" parent="Girassois"]
+position = Vector2( -797.446, 136.411 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 8 )
+
+[node name="Object_11" type="Sprite" parent="Girassois"]
+position = Vector2( -837.167, 136.411 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 8 )
+
+[node name="Object_12" type="Sprite" parent="Girassois"]
+position = Vector2( -626.246, -56.2377 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 8 )
+
+[node name="KinematicBody2D" parent="." instance=ExtResource( 9 )]
+editor/display_folded = true
+position = Vector2( 102.339, 435.452 )
+
+[node name="Camera2D" type="Camera2D" parent="KinematicBody2D"]
+current = true
+zoom = Vector2( 0.85, 0.85 )
+limit_top = -500
+limit_bottom = 1500
+drag_margin_h_enabled = false
+drag_margin_v_enabled = false
+
+[node name="SpriteVidas" type="Sprite" parent="KinematicBody2D/Camera2D"]
+position = Vector2( -359.111, -198.963 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 10 )
+
+[node name="SpriteDiamantes" type="Sprite" parent="KinematicBody2D/Camera2D"]
+position = Vector2( 316.725, -198.98 )
+texture = ExtResource( 11 )
+
+[node name="CountVidas" type="Label" parent="KinematicBody2D/Camera2D"]
+margin_left = -324.052
+margin_top = -212.868
+margin_right = -284.052
+margin_bottom = -176.868
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 0.933333, 0, 1 )
+text = "X 3"
+
+[node name="CountDiamantes" type="Label" parent="KinematicBody2D/Camera2D"]
+margin_left = 344.635
+margin_top = -219.54
+margin_right = 384.635
+margin_bottom = -183.54
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 1, 0.933333, 0, 1 )
+text = "X 0"
+
+[node name="Spikes" type="Node2D" parent="."]
+editor/display_folded = true
+
+[node name="Area2D" parent="Spikes" instance=ExtResource( 13 )]
+position = Vector2( -30.6505, 148.271 )
+scale = Vector2( 1.42, 1.25219 )
+
+[node name="Area2D3" parent="Spikes" instance=ExtResource( 13 )]
+position = Vector2( 93.0347, 590.072 )
+rotation = 3.13605
+scale = Vector2( 0.783351, 1.18607 )
+
+[node name="Area2D4" parent="Spikes" instance=ExtResource( 13 )]
+position = Vector2( 150.3, 593.308 )
+rotation = 3.13605
+scale = Vector2( 0.783351, 1.18607 )
+
+[node name="Area2D5" parent="Spikes" instance=ExtResource( 13 )]
+position = Vector2( 206.272, 589.749 )
+rotation = 3.13605
+scale = Vector2( 0.783351, 1.18607 )
+
+[node name="Area2D6" parent="Spikes" instance=ExtResource( 13 )]
+position = Vector2( 358.305, 772.917 )
+rotation = 3.13605
+scale = Vector2( 0.783351, 1.18607 )
+
+[node name="Area2D7" parent="Spikes" instance=ExtResource( 13 )]
+position = Vector2( 415.86, 772.917 )
+rotation = 3.13605
+scale = Vector2( 0.783351, 1.18607 )
+
+[node name="Area2D8" parent="Spikes" instance=ExtResource( 13 )]
+position = Vector2( 168.13, 963.336 )
+rotation = 3.13605
+scale = Vector2( 0.783351, 1.18607 )
+
+[node name="Area2D9" parent="Spikes" instance=ExtResource( 13 )]
+position = Vector2( 224.192, 962.46 )
+rotation = 3.13605
+scale = Vector2( 0.783351, 1.18607 )
+
+[node name="Area2D10" parent="Spikes" instance=ExtResource( 13 )]
+position = Vector2( -64.0601, 1154.63 )
+rotation = 3.13605
+scale = Vector2( 0.783351, 1.18607 )
+
+[node name="Area2D11" parent="Spikes" instance=ExtResource( 13 )]
+position = Vector2( -121.757, 1155.19 )
+rotation = 3.13605
+scale = Vector2( 0.783351, 1.18607 )
+
+[node name="Area2D12" parent="Spikes" instance=ExtResource( 13 )]
+position = Vector2( -351.991, 1061.43 )
+rotation = 3.13605
+scale = Vector2( 0.783351, 1.18607 )
+
+[node name="Area2D13" parent="Spikes" instance=ExtResource( 13 )]
+position = Vector2( -409.41, 1061.15 )
+rotation = 3.13605
+scale = Vector2( 0.783351, 1.18607 )
+
+[node name="Area2D14" parent="Spikes" instance=ExtResource( 13 )]
+position = Vector2( -639.089, 867.811 )
+rotation = 3.13605
+scale = Vector2( 0.783351, 1.18607 )
+
+[node name="Area2D15" parent="Spikes" instance=ExtResource( 13 )]
+position = Vector2( -697.063, 868.366 )
+rotation = 3.13605
+scale = Vector2( 0.783351, 1.18607 )
+
+[node name="Area2D16" parent="Spikes" instance=ExtResource( 13 )]
+position = Vector2( -930.348, 676.412 )
+rotation = 3.13605
+scale = Vector2( 0.783351, 1.18607 )
+
+[node name="Area2D17" parent="Spikes" instance=ExtResource( 13 )]
+position = Vector2( -986.658, 676.412 )
+rotation = 3.13605
+scale = Vector2( 0.783351, 1.18607 )
+
+[node name="Area2D18" parent="Spikes" instance=ExtResource( 13 )]
+position = Vector2( -696.786, 484.458 )
+rotation = 3.13605
+scale = Vector2( 0.783351, 1.18607 )
+
+[node name="Area2D19" parent="Spikes" instance=ExtResource( 13 )]
+position = Vector2( -641.447, 483.931 )
+rotation = 3.13605
+scale = Vector2( 0.783351, 1.18607 )
+
+[node name="Area2D20" parent="Spikes" instance=ExtResource( 13 )]
+position = Vector2( -836.452, 292.879 )
+rotation = 3.13605
+scale = Vector2( 0.783351, 1.18607 )
+
+[node name="Area2D21" parent="Spikes" instance=ExtResource( 13 )]
+position = Vector2( -892.318, 293.406 )
+rotation = 3.13605
+scale = Vector2( 0.783351, 1.18607 )
+
+[node name="Area2D22" parent="Spikes" instance=ExtResource( 13 )]
+position = Vector2( -602.973, 99.9823 )
+rotation = 3.13605
+scale = Vector2( 0.783351, 1.18607 )
+
+[node name="Area2D23" parent="Spikes" instance=ExtResource( 13 )]
+position = Vector2( -546.052, 99.7188 )
+rotation = 3.13605
+scale = Vector2( 0.783351, 1.18607 )
+
+[node name="Area2D2" parent="Spikes" instance=ExtResource( 13 )]
+position = Vector2( -318.91, 149.344 )
+scale = Vector2( 1.42, 1.25219 )
+
+[node name="Diamantes" type="Node2D" parent="."]
+
+[node name="Area2D" parent="Diamantes" instance=ExtResource( 14 )]
+position = Vector2( 204.484, 436.494 )
+
+[node name="Area2D2" parent="Diamantes" instance=ExtResource( 14 )]
+position = Vector2( 380, 620 )
+
+[node name="Area2D3" parent="Diamantes" instance=ExtResource( 14 )]
+position = Vector2( 180, 820 )
+
+[node name="Area2D4" parent="Diamantes" instance=ExtResource( 14 )]
+position = Vector2( -81.8868, 941.132 )
+
+[node name="Area2D5" parent="Diamantes" instance=ExtResource( 14 )]
+position = Vector2( -410, 850 )
+
+[node name="Area2D6" parent="Diamantes" instance=ExtResource( 14 )]
+position = Vector2( -740, 600 )
+
+[node name="Area2D7" parent="Diamantes" instance=ExtResource( 14 )]
+position = Vector2( -950, 410 )
+
+[node name="Area2D8" parent="Diamantes" instance=ExtResource( 14 )]
+position = Vector2( -660, 260 )
+
+[node name="Area2D9" parent="Diamantes" instance=ExtResource( 14 )]
+position = Vector2( -800, -10 )
+
+[node name="Area2D10" parent="Diamantes" instance=ExtResource( 14 )]
+position = Vector2( -278.868, -110.663 )
+
+[node name="Area2D11" parent="Diamantes" instance=ExtResource( 14 )]
+position = Vector2( -220, 10 )
+
+[node name="Area2D12" parent="Diamantes" instance=ExtResource( 14 )]
+position = Vector2( -190, 130 )
+
+[node name="Area2D13" parent="Diamantes" instance=ExtResource( 14 )]
+position = Vector2( -172.067, 288.413 )
+
+[node name="Area2D14" parent="Diamantes" instance=ExtResource( 14 )]
+position = Vector2( -167.307, 390 )
+
+[node name="AreaMorte3" type="Area2D" parent="."]
+editor/display_folded = true
+position = Vector2( -215.501, 1225.95 )
+script = ExtResource( 15 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaMorte3"]
+shape = SubResource( 4 )
+
+[node name="Moitas" type="Node2D" parent="."]
+editor/display_folded = true
+
+[node name="Object_6" type="Sprite" parent="Moitas"]
+position = Vector2( 455.059, 622.279 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 16 )
+
+[node name="Object_7" type="Sprite" parent="Moitas"]
+position = Vector2( 338.834, 618.128 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 16 )
+
+[node name="Object_8" type="Sprite" parent="Moitas"]
+position = Vector2( 312.42, 625.676 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 16 )
+
+[node name="Object_28" type="Sprite" parent="Moitas"]
+position = Vector2( 44.5147, 428.871 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 16 )
+
+[node name="Object_29" type="Sprite" parent="Moitas"]
+position = Vector2( 92.2939, 432.283 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 16 )
+
+[node name="Object_30" type="Sprite" parent="Moitas"]
+position = Vector2( 248.714, 428.302 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 16 )
+
+[node name="Object_9" type="Sprite" parent="Moitas"]
+position = Vector2( 119.969, 812.088 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 16 )
+
+[node name="Object_10" type="Sprite" parent="Moitas"]
+position = Vector2( -22.2931, 1008.31 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 16 )
+
+[node name="Object_11" type="Sprite" parent="Moitas"]
+position = Vector2( -81.915, 1001.52 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 16 )
+
+[node name="Object_12" type="Sprite" parent="Moitas"]
+position = Vector2( -134.367, 1006.43 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 16 )
+
+[node name="Object_13" type="Sprite" parent="Moitas"]
+position = Vector2( -165.31, 1010.58 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 16 )
+
+[node name="Object_14" type="Sprite" parent="Moitas"]
+position = Vector2( -457.929, 911.162 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 16 )
+
+[node name="Object_15" type="Sprite" parent="Moitas"]
+position = Vector2( -599.172, 720.448 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 16 )
+
+[node name="Object_16" type="Sprite" parent="Moitas"]
+position = Vector2( -719.624, 716.146 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 16 )
+
+[node name="Object_17" type="Sprite" parent="Moitas"]
+position = Vector2( -744.718, 723.674 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 16 )
+
+[node name="Object_18" type="Sprite" parent="Moitas"]
+position = Vector2( -885.961, 527.941 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 16 )
+
+[node name="Object_19" type="Sprite" parent="Moitas"]
+position = Vector2( -1032.22, 527.941 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 16 )
+
+[node name="Object_20" type="Sprite" parent="Moitas"]
+position = Vector2( -745.793, 335.434 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 16 )
+
+[node name="Object_22" type="Sprite" parent="Moitas"]
+position = Vector2( -645.058, 341.169 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 16 )
+
+[node name="Object_23" type="Sprite" parent="Moitas"]
+position = Vector2( -900.3, 141.851 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 16 )
+
+[node name="Object_24" type="Sprite" parent="Moitas"]
+position = Vector2( -863.735, 149.379 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 16 )
+
+[node name="Object_25" type="Sprite" parent="Moitas"]
+position = Vector2( -648.285, -45.2785 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 16 )
+
+[node name="Object_26" type="Sprite" parent="Moitas"]
+position = Vector2( -549.342, -52.0897 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 16 )
+
+[node name="Object_27" type="Sprite" parent="Moitas"]
+position = Vector2( -508.116, -41.6936 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 16 )
+[connection signal="body_entered" from="Finish" to="Finish" method="_on_Area2D_body_entered"]
+[connection signal="hit" from="Spikes/Area2D" to="." method="_on_Area2D_hit"]
+[connection signal="hit" from="Spikes/Area2D3" to="." method="_on_Area2D_hit"]
+[connection signal="hit" from="Spikes/Area2D4" to="." method="_on_Area2D_hit"]
+[connection signal="hit" from="Spikes/Area2D5" to="." method="_on_Area2D_hit"]
+[connection signal="hit" from="Spikes/Area2D6" to="." method="_on_Area2D_hit"]
+[connection signal="hit" from="Spikes/Area2D7" to="." method="_on_Area2D_hit"]
+[connection signal="hit" from="Spikes/Area2D8" to="." method="_on_Area2D_hit"]
+[connection signal="hit" from="Spikes/Area2D9" to="." method="_on_Area2D_hit"]
+[connection signal="hit" from="Spikes/Area2D10" to="." method="_on_Area2D_hit"]
+[connection signal="hit" from="Spikes/Area2D11" to="." method="_on_Area2D_hit"]
+[connection signal="hit" from="Spikes/Area2D12" to="." method="_on_Area2D_hit"]
+[connection signal="hit" from="Spikes/Area2D13" to="." method="_on_Area2D_hit"]
+[connection signal="hit" from="Spikes/Area2D14" to="." method="_on_Area2D_hit"]
+[connection signal="hit" from="Spikes/Area2D15" to="." method="_on_Area2D_hit"]
+[connection signal="hit" from="Spikes/Area2D16" to="." method="_on_Area2D_hit"]
+[connection signal="hit" from="Spikes/Area2D17" to="." method="_on_Area2D_hit"]
+[connection signal="hit" from="Spikes/Area2D18" to="." method="_on_Area2D_hit"]
+[connection signal="hit" from="Spikes/Area2D19" to="." method="_on_Area2D_hit"]
+[connection signal="hit" from="Spikes/Area2D20" to="." method="_on_Area2D_hit"]
+[connection signal="hit" from="Spikes/Area2D21" to="." method="_on_Area2D_hit"]
+[connection signal="hit" from="Spikes/Area2D22" to="." method="_on_Area2D_hit"]
+[connection signal="hit" from="Spikes/Area2D23" to="." method="_on_Area2D_hit"]
+[connection signal="hit" from="Spikes/Area2D2" to="." method="_on_Area2D_hit"]
+[connection signal="diamanteCollected" from="Diamantes/Area2D" to="." method="_on_Area2D_diamanteCollected"]
+[connection signal="diamanteCollected" from="Diamantes/Area2D2" to="." method="_on_Area2D_diamanteCollected"]
+[connection signal="diamanteCollected" from="Diamantes/Area2D3" to="." method="_on_Area2D_diamanteCollected"]
+[connection signal="diamanteCollected" from="Diamantes/Area2D4" to="." method="_on_Area2D_diamanteCollected"]
+[connection signal="diamanteCollected" from="Diamantes/Area2D5" to="." method="_on_Area2D_diamanteCollected"]
+[connection signal="diamanteCollected" from="Diamantes/Area2D6" to="." method="_on_Area2D_diamanteCollected"]
+[connection signal="diamanteCollected" from="Diamantes/Area2D7" to="." method="_on_Area2D_diamanteCollected"]
+[connection signal="diamanteCollected" from="Diamantes/Area2D8" to="." method="_on_Area2D_diamanteCollected"]
+[connection signal="diamanteCollected" from="Diamantes/Area2D9" to="." method="_on_Area2D_diamanteCollected"]
+[connection signal="diamanteCollected" from="Diamantes/Area2D10" to="." method="_on_Area2D_diamanteCollected"]
+[connection signal="diamanteCollected" from="Diamantes/Area2D11" to="." method="_on_Area2D_diamanteCollected"]
+[connection signal="diamanteCollected" from="Diamantes/Area2D12" to="." method="_on_Area2D_diamanteCollected"]
+[connection signal="diamanteCollected" from="Diamantes/Area2D13" to="." method="_on_Area2D_diamanteCollected"]
+[connection signal="diamanteCollected" from="Diamantes/Area2D14" to="." method="_on_Area2D_diamanteCollected"]
+[connection signal="body_entered" from="AreaMorte3" to="AreaMorte3" method="_on_AreaMorte3_body_entered"]
+[connection signal="perdeVida3" from="AreaMorte3" to="." method="_on_AreaMorte3_perdeVida3"]

@@ -1,0 +1,59 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Player/adventurer_walk1.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Player/adventurer_walk2.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Player/adventurer_jump.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Player/adventurer_hang.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Player/adventurer_hurt.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Player/adventurer_stand.png" type="Texture" id=7]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "Walk",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "Jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "Finish",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "Hit",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 17.1946
+height = 25.7084
+
+[node name="KinematicBody2D" type="KinematicBody2D" groups=[
+"Player",
+]]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.65, 0.75 )
+frames = SubResource( 1 )
+animation = "Hit"
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.320836, 4.4379 )
+shape = SubResource( 2 )

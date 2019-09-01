@@ -1,0 +1,505 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://Scripts/Fase2.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Cenário/Background.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/FinishArea2.gd" type="Script" id=3]
+[ext_resource path="res://Sprites/Itens/Object_5.png" type="Texture" id=4]
+[ext_resource path="res://Scene/TileMap.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scene/SpikesTop.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Sprites/Cenário/Object_21.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Cenário/Object_19.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Cenário/Object_18.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Cenário/Object_12.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Cenário/Object_1.png" type="Texture" id=11]
+[ext_resource path="res://Scene/Player.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Sprites/Player/adventurer_stand.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/Itens/gemYellow.png" type="Texture" id=14]
+[ext_resource path="res://GoldUnderTheMud-Regular.ttf" type="DynamicFontData" id=15]
+[ext_resource path="res://Scripts/AreaDeMorte2.gd" type="Script" id=16]
+[ext_resource path="res://Sprites/Cenário/Object_6.png" type="Texture" id=17]
+[ext_resource path="res://Scene/DiamanteArea.tscn" type="PackedScene" id=18]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 35.008, 32.352 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+font_data = ExtResource( 15 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 30
+font_data = ExtResource( 15 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 2130.93, 10 )
+
+[node name="World2" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 1600, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( -104.426, -684.999 )
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Finish" type="Area2D" parent="."]
+editor/display_folded = true
+position = Vector2( 50.9347, -63.4099 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+nextLevel = "res://Scene/Fase3.tscn"
+
+[node name="Sprite" type="Sprite" parent="Finish"]
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Finish"]
+position = Vector2( 1.53679, 29.8136 )
+shape = SubResource( 1 )
+
+[node name="TileMap" parent="." instance=ExtResource( 5 )]
+position = Vector2( 60, 282 )
+tile_data = PoolIntArray( -131073, 0, 0, -196608, 2, 0, -196605, 0, 0, -196604, 2, 0, -196601, 0, 0, -196600, 2, 0, -196597, 0, 0, -196596, 2, 0, -196593, 0, 0, -196592, 2, 0, -65519, 0, 0, -65518, 2, 0, 65555, 0, 0, 65556, 2, 0, 196607, 0, 0, 131072, 1, 0, 131073, 1, 0, 131074, 1, 0, 131075, 1, 0, 131076, 2, 0, 131079, 0, 0, 131080, 1, 0, 131081, 1, 0, 131082, 1, 0, 131083, 1, 0, 131084, 1, 0, 131085, 1, 0, 131086, 2, 0, 131088, 0, 0, 131089, 2, 0 )
+
+[node name="SpikesTop" type="Node2D" parent="."]
+editor/display_folded = true
+position = Vector2( 60, 282 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Area2D" parent="SpikesTop" instance=ExtResource( 6 )]
+position = Vector2( 7.43289, -373.761 )
+scale = Vector2( 2, 2 )
+
+[node name="Area2D2" parent="SpikesTop" instance=ExtResource( 6 )]
+position = Vector2( 771.296, -375.022 )
+scale = Vector2( 2, 2 )
+
+[node name="Area2D3" parent="SpikesTop" instance=ExtResource( 6 )]
+position = Vector2( 1545.24, -380.064 )
+scale = Vector2( 2, 2 )
+
+[node name="Area2D4" parent="SpikesTop" instance=ExtResource( 6 )]
+position = Vector2( 2302.8, -371.24 )
+scale = Vector2( 2, 2 )
+
+[node name="Area2D5" parent="SpikesTop" instance=ExtResource( 6 )]
+position = Vector2( 3080.53, -375.022 )
+scale = Vector2( 2, 2 )
+
+[node name="Arvores" type="Node2D" parent="."]
+editor/display_folded = true
+
+[node name="Object_21" type="Sprite" parent="Arvores"]
+position = Vector2( 40, 224.287 )
+texture = ExtResource( 7 )
+
+[node name="Object_19" type="Sprite" parent="Arvores"]
+position = Vector2( 410, 225.038 )
+texture = ExtResource( 8 )
+
+[node name="Object_18" type="Sprite" parent="Arvores"]
+position = Vector2( 1069.61, 224.86 )
+texture = ExtResource( 9 )
+
+[node name="Object_12" type="Sprite" parent="."]
+position = Vector2( 229.499, 352.503 )
+texture = ExtResource( 10 )
+
+[node name="Girassois" type="Node2D" parent="."]
+editor/display_folded = true
+
+[node name="Object_1" type="Sprite" parent="Girassois"]
+position = Vector2( 81.3285, 417.088 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 11 )
+
+[node name="Object_2" type="Sprite" parent="Girassois"]
+position = Vector2( 377.006, 417.088 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 11 )
+
+[node name="Object_3" type="Sprite" parent="Girassois"]
+position = Vector2( 459.378, 418.932 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 11 )
+
+[node name="Object_4" type="Sprite" parent="Girassois"]
+position = Vector2( 788, 416.009 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 11 )
+
+[node name="Object_5" type="Sprite" parent="Girassois"]
+position = Vector2( 861.171, 417.263 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 11 )
+
+[node name="Object_6" type="Sprite" parent="Girassois"]
+position = Vector2( 900.893, 421.027 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 11 )
+
+[node name="Object_7" type="Sprite" parent="Girassois"]
+position = Vector2( 987.025, 417.263 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 11 )
+
+[node name="Object_8" type="Sprite" parent="Girassois"]
+position = Vector2( 1346.27, 417.049 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 11 )
+
+[node name="Object_9" type="Sprite" parent="Girassois"]
+position = Vector2( 1409.67, 417.804 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 11 )
+
+[node name="Object_10" type="Sprite" parent="Girassois"]
+position = Vector2( 1726.68, 416.804 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 11 )
+
+[node name="Object_11" type="Sprite" parent="Girassois"]
+position = Vector2( 1919.44, 320.636 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 11 )
+
+[node name="Object_12" type="Sprite" parent="Girassois"]
+position = Vector2( 2022.71, 321.472 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 11 )
+
+[node name="Object_13" type="Sprite" parent="Girassois"]
+position = Vector2( 1714.98, 130.391 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 11 )
+
+[node name="Object_14" type="Sprite" parent="Girassois"]
+position = Vector2( 1643.06, -62.7803 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 11 )
+
+[node name="Object_15" type="Sprite" parent="Girassois"]
+position = Vector2( 1610.86, -62.7803 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 11 )
+
+[node name="Object_16" type="Sprite" parent="Girassois"]
+position = Vector2( 1190.65, -62.3621 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 11 )
+
+[node name="Object_17" type="Sprite" parent="Girassois"]
+position = Vector2( 864.519, -62.3621 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 11 )
+
+[node name="Object_18" type="Sprite" parent="Girassois"]
+position = Vector2( 491.137, -62.7803 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 11 )
+
+[node name="Object_19" type="Sprite" parent="Girassois"]
+position = Vector2( 372.809, -63.1984 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 11 )
+
+[node name="KinematicBody2D" parent="." instance=ExtResource( 12 )]
+editor/display_folded = true
+position = Vector2( 20, 442.401 )
+
+[node name="Camera2D" type="Camera2D" parent="KinematicBody2D"]
+current = true
+zoom = Vector2( 0.85, 0.85 )
+limit_left = -100000
+limit_top = -600
+limit_bottom = 750
+drag_margin_h_enabled = false
+drag_margin_v_enabled = false
+
+[node name="SpriteVidas" type="Sprite" parent="KinematicBody2D/Camera2D"]
+position = Vector2( -360.957, -203.205 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 13 )
+
+[node name="SpriteDiamantes" type="Sprite" parent="KinematicBody2D/Camera2D"]
+position = Vector2( 312.543, -197.405 )
+texture = ExtResource( 14 )
+
+[node name="countDiamantes" type="Label" parent="KinematicBody2D/Camera2D"]
+margin_left = 345.397
+margin_top = -222.282
+margin_right = 385.397
+margin_bottom = -186.282
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 0.933333, 0, 1 )
+text = "X 0"
+
+[node name="CounVidas" type="Label" parent="KinematicBody2D/Camera2D"]
+margin_left = -324.012
+margin_top = -218.865
+margin_right = -284.012
+margin_bottom = -182.865
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 1, 0.933333, 0, 1 )
+text = "X 3"
+
+[node name="Area2D" type="Area2D" parent="."]
+editor/display_folded = true
+script = ExtResource( 16 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 1389.55, 665.483 )
+shape = SubResource( 4 )
+
+[node name="Moitas" type="Node2D" parent="."]
+editor/display_folded = true
+
+[node name="Object_6" type="Sprite" parent="Moitas"]
+position = Vector2( -11.9013, 421.676 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 17 )
+
+[node name="Object_7" type="Sprite" parent="Moitas"]
+position = Vector2( 22.8456, 428.625 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 17 )
+
+[node name="Object_8" type="Sprite" parent="Moitas"]
+position = Vector2( 70.1013, 418.896 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 17 )
+
+[node name="Object_9" type="Sprite" parent="Moitas"]
+position = Vector2( 513.737, 424.3 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 17 )
+
+[node name="Object_10" type="Sprite" parent="Moitas"]
+position = Vector2( 471.322, 430.139 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 17 )
+
+[node name="Object_11" type="Sprite" parent="Moitas"]
+position = Vector2( 756.492, 424.704 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 17 )
+
+[node name="Object_13" type="Sprite" parent="Moitas"]
+position = Vector2( 788.397, 432.95 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 17 )
+
+[node name="Object_14" type="Sprite" parent="Moitas"]
+position = Vector2( 816.001, 421.836 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 17 )
+
+[node name="Object_15" type="Sprite" parent="Moitas"]
+position = Vector2( 909.207, 424.346 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 17 )
+
+[node name="Object_16" type="Sprite" parent="Moitas"]
+position = Vector2( 961.546, 423.27 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 17 )
+
+[node name="Object_17" type="Sprite" parent="Moitas"]
+position = Vector2( 1024.64, 429.365 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 17 )
+
+[node name="Object_18" type="Sprite" parent="Moitas"]
+position = Vector2( 1301.75, 423.27 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 17 )
+
+[node name="Object_19" type="Sprite" parent="Moitas"]
+position = Vector2( 1448.01, 422.912 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 17 )
+
+[node name="Object_21" type="Sprite" parent="Moitas"]
+position = Vector2( 1621.88, 422.195 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 17 )
+
+[node name="Object_22" type="Sprite" parent="Moitas"]
+position = Vector2( 1648.41, 428.648 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 17 )
+
+[node name="Object_23" type="Sprite" parent="Moitas"]
+position = Vector2( 1768.5, 426.855 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 17 )
+
+[node name="Object_24" type="Sprite" parent="Moitas"]
+position = Vector2( 1967.46, 326.121 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 17 )
+
+[node name="Object_25" type="Sprite" parent="Moitas"]
+position = Vector2( 2052.06, 329.347 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 17 )
+
+[node name="Object_26" type="Sprite" parent="Moitas"]
+position = Vector2( 1857.4, 139.708 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 17 )
+
+[node name="Object_27" type="Sprite" parent="Moitas"]
+position = Vector2( 1671.35, -52.7989 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 17 )
+
+[node name="Object_28" type="Sprite" parent="Moitas"]
+position = Vector2( 1522.58, -52.0819 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 17 )
+
+[node name="Object_29" type="Sprite" parent="Moitas"]
+position = Vector2( 1551.26, -57.1007 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 17 )
+
+[node name="Object_30" type="Sprite" parent="Moitas"]
+position = Vector2( 1287.77, -54.5913 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 17 )
+
+[node name="Object_31" type="Sprite" parent="Moitas"]
+position = Vector2( 1220.73, -53.1574 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 17 )
+
+[node name="Object_32" type="Sprite" parent="Moitas"]
+position = Vector2( 1144.02, -57.4592 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 17 )
+
+[node name="Object_33" type="Sprite" parent="Moitas"]
+position = Vector2( 899.887, -56.0253 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 17 )
+
+[node name="Object_34" type="Sprite" parent="Moitas"]
+position = Vector2( 758.285, -55.6668 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 17 )
+
+[node name="Object_36" type="Sprite" parent="Moitas"]
+position = Vector2( 517.024, -52.7989 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 17 )
+
+[node name="Object_37" type="Sprite" parent="Moitas"]
+position = Vector2( 407.328, -54.2328 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 17 )
+
+[node name="Object_38" type="Sprite" parent="Moitas"]
+position = Vector2( 135.954, -52.7989 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 17 )
+
+[node name="Object_39" type="Sprite" parent="Moitas"]
+position = Vector2( 104.407, -47.4216 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 17 )
+
+[node name="Object_40" type="Sprite" parent="Moitas"]
+position = Vector2( -9.2329, -53.1574 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 17 )
+
+[node name="Object_35" type="Sprite" parent="Moitas"]
+position = Vector2( 789.474, -50.2895 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 17 )
+
+[node name="Object_20" type="Sprite" parent="Moitas"]
+position = Vector2( 1476.69, 430.799 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 17 )
+
+[node name="Diamantes" type="Node2D" parent="."]
+editor/display_folded = true
+
+[node name="Area2D" parent="Diamantes" instance=ExtResource( 18 )]
+position = Vector2( 160.804, 442.401 )
+
+[node name="Area2D2" parent="Diamantes" instance=ExtResource( 18 )]
+position = Vector2( 301.594, 440.596 )
+
+[node name="Area2D3" parent="Diamantes" instance=ExtResource( 18 )]
+position = Vector2( 442.384, 439.694 )
+
+[node name="Area2D4" parent="Diamantes" instance=ExtResource( 18 )]
+position = Vector2( 600.141, 335.094 )
+
+[node name="Area2D5" parent="Diamantes" instance=ExtResource( 18 )]
+position = Vector2( 829.918, 437.979 )
+
+[node name="Area2D6" parent="Diamantes" instance=ExtResource( 18 )]
+position = Vector2( 954.237, 435.407 )
+
+[node name="Area2D7" parent="Diamantes" instance=ExtResource( 18 )]
+position = Vector2( 1110, 431.099 )
+
+[node name="Area2D8" parent="Diamantes" instance=ExtResource( 18 )]
+position = Vector2( 1290, 433.046 )
+
+[node name="Area2D9" parent="Diamantes" instance=ExtResource( 18 )]
+position = Vector2( 1530, 335.094 )
+
+[node name="Area2D10" parent="Diamantes" instance=ExtResource( 18 )]
+position = Vector2( 1970, 268.694 )
+
+[node name="Area2D11" parent="Diamantes" instance=ExtResource( 18 )]
+position = Vector2( 1800, 20 )
+
+[node name="Area2D12" parent="Diamantes" instance=ExtResource( 18 )]
+position = Vector2( 1470, -127.41 )
+
+[node name="Area2D13" parent="Diamantes" instance=ExtResource( 18 )]
+position = Vector2( 1100, -120 )
+
+[node name="Area2D14" parent="Diamantes" instance=ExtResource( 18 )]
+position = Vector2( 690, -120 )
+
+[node name="Area2D15" parent="Diamantes" instance=ExtResource( 18 )]
+position = Vector2( 310, -120 )
+[connection signal="body_entered" from="Finish" to="Finish" method="_on_Finish_body_entered"]
+[connection signal="hit" from="SpikesTop/Area2D" to="." method="_on_Area2D_hit"]
+[connection signal="hit" from="SpikesTop/Area2D2" to="." method="_on_Area2D_hit"]
+[connection signal="hit" from="SpikesTop/Area2D3" to="." method="_on_Area2D_hit"]
+[connection signal="hit" from="SpikesTop/Area2D4" to="." method="_on_Area2D_hit"]
+[connection signal="hit" from="SpikesTop/Area2D5" to="." method="_on_Area2D_hit"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]
+[connection signal="perdeVida2" from="Area2D" to="." method="_on_Area2D_perdeVida2"]
+[connection signal="diamanteCollected" from="Diamantes/Area2D" to="." method="_on_Area2D_diamanteCollected"]
+[connection signal="diamanteCollected" from="Diamantes/Area2D2" to="." method="_on_Area2D_diamanteCollected"]
+[connection signal="diamanteCollected" from="Diamantes/Area2D3" to="." method="_on_Area2D_diamanteCollected"]
+[connection signal="diamanteCollected" from="Diamantes/Area2D4" to="." method="_on_Area2D_diamanteCollected"]
+[connection signal="diamanteCollected" from="Diamantes/Area2D5" to="." method="_on_Area2D_diamanteCollected"]
+[connection signal="diamanteCollected" from="Diamantes/Area2D6" to="." method="_on_Area2D_diamanteCollected"]
+[connection signal="diamanteCollected" from="Diamantes/Area2D7" to="." method="_on_Area2D_diamanteCollected"]
+[connection signal="diamanteCollected" from="Diamantes/Area2D8" to="." method="_on_Area2D_diamanteCollected"]
+[connection signal="diamanteCollected" from="Diamantes/Area2D9" to="." method="_on_Area2D_diamanteCollected"]
+[connection signal="diamanteCollected" from="Diamantes/Area2D10" to="." method="_on_Area2D_diamanteCollected"]
+[connection signal="diamanteCollected" from="Diamantes/Area2D11" to="." method="_on_Area2D_diamanteCollected"]
+[connection signal="diamanteCollected" from="Diamantes/Area2D12" to="." method="_on_Area2D_diamanteCollected"]
+[connection signal="diamanteCollected" from="Diamantes/Area2D13" to="." method="_on_Area2D_diamanteCollected"]
+[connection signal="diamanteCollected" from="Diamantes/Area2D14" to="." method="_on_Area2D_diamanteCollected"]
+[connection signal="diamanteCollected" from="Diamantes/Area2D15" to="." method="_on_Area2D_diamanteCollected"]
